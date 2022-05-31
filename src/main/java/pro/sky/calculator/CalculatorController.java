@@ -38,8 +38,9 @@ public class CalculatorController {
     public String divide(@RequestParam("num1") double a, @RequestParam("num2") double b) {
         if (b == 0) {
             return "Атата! На ноль делить нельзя...";
-        } else{
-            return a + " / " + b + " = " + calculatorService.divide(a, b);}
+        } else {
+            return a + " / " + b + " = " + calculatorService.divide(a, b);
+        }
     }
 }
 
