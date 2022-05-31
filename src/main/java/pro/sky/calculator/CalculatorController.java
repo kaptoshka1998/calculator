@@ -20,19 +20,26 @@ public class CalculatorController {
     }
 
     @GetMapping("/plus")
-    public String plus(@RequestParam("num1") double a,@RequestParam("num2") double b) {
-        return calculatorService.plus(a, b);
+    public String plus(@RequestParam("num1") double a, @RequestParam("num2") double b) {
+        return a + " + " + b + " = " + calculatorService.plus(a, b);
     }
+
     @GetMapping("/minus")
-    public String minus(@RequestParam("num1") double a,@RequestParam("num2") double b) {
-        return calculatorService.minus(a, b);
+    public String minus(@RequestParam("num1") double a, @RequestParam("num2") double b) {
+        return a + " - " + b + " = " + calculatorService.minus(a, b);
     }
+
     @GetMapping("/multiply")
-    public String multiply(@RequestParam("num1") double a,@RequestParam("num2") double b) {
-        return calculatorService.multiply(a, b);
+    public String multiply(@RequestParam("num1") double a, @RequestParam("num2") double b) {
+        return a + " * " + b + " = " + calculatorService.multiply(a, b);
     }
+
     @GetMapping("/divide")
-    public String divide(@RequestParam("num1") double a,@RequestParam("num2") double b) {
-        return calculatorService.divide(a, b);
+    public String divide(@RequestParam("num1") double a, @RequestParam("num2") double b) {
+        if (b == 0) {
+            return "Атата! На ноль делить нельзя...";
+        } else{
+            return a + " / " + b + " = " + calculatorService.divide(a, b);}
     }
 }
+
